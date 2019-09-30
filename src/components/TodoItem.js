@@ -18,11 +18,11 @@ export default class TodoItem extends React.Component {
     }
 
     render () {
-        return(    
+      return(    
       <li className="">
       <div className="view">
         <input type="checkbox" className="toggle" id="todo-1" checked={this.props.item.completed} onChange={this.completedChanged} />
-        <label htmlFor="todo-1" onChange={this.completedChanged}><span className={this.props.item.completed ? 'completed' : 'active'} >{this.props.item.title}</span></label>
+        <label ><span className={this.props.item.completed ? 'completed' : 'active'} >{this.props.item.title}</span></label>
         <button type="button" className="destroy" onClick={this.removeClicked} />
       </div>
     </li>

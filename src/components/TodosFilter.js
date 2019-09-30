@@ -8,38 +8,21 @@ export default class TodoFilter extends React.Component {
             {this.props.left} items left
           </span>
 
-          {/* <span className ="">
+          <span className ="display filters">
             {['all', 'active', 'completed'].map(item =>
-            <span classNmame={this.props.display === item ? 'selected' : ''}
-            onClick={() => this.props.displayChanged(item)}>{item}    </span>
-
-            )
-
-            }
-            </span>    */}
-
-          <ul className="filters">
-            <li>
-             <a href="#/" className={this.props.display === 'all' ? 'selected' : ''}
-              onClick={() => this.props.displayChanged('all')}>All</a>
-            </li>
-  
-            <li>
-              <a href="#/active" className={this.props.display === 'active' ? 'selected' : ''
-            } onClick={() => this.props.displayChanged('active')}>Active</a>
-            </li>
-  
-            <li>
-              <a href="#/completed" className={this.props.display === 'completed' ? 'selected' : ''}
-              onClick={() => this.props.displayChanged('completed')}>Completed</a>
-            </li>
-          </ul>
-  
-          <button
+            <span key={item} className={this.props.display === item ? 'selected' : ''}
+            onClick={() => this.props.displayChanged(item)}>{item}</span>
+            )}
+            </span>    
+            {this.props.completed ? <button
             type="button"
             className="clear-completed"
-            style={{ display: 'block' }}
-          />
+            style={{ display: 'block' }} onClick={
+              (event) => {
+                this.props.removeClicked();
+                event.preventDefault();
+              }} /> : null
+          }
         </footer>
     );
   }

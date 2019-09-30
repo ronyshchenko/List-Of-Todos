@@ -1,3 +1,13 @@
 .completed {
     text-decoration: line-through;
 }
+
+.display > span {
+    display: inline-block;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+.display > span.selected {
+    color:orange;
+}
